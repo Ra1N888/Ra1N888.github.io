@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>15-building</title>
+
+    <script>
+        paceOptions = {
+            ajax: false, // disabled
+            document: true, // enabled
+            eventLag: false, // disabled
+            elements: {
+              selectors: ['#node_2'] //直到id为begin的div创建成功，即方块显示完毕的时候进度条加载完成
+            }
+        };
+    </script>
+    <script src="./js/pace.min.js"></script>
+    <link rel="stylesheet" href="loading-bar.css">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body id="body">
+
+    
+    <script type="module" src="./charts.js" charset="utf-8"></script>
+    <script type="module" src="./main.js" charset="utf-8"></script>
+
+
+    <script type="text/javascript" src="./js/three.js" ></script>
+    <script type="text/javascript" src="./js/OrbitControls.js" ></script>
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
+
+    <div id="wrapper">
+
+        <div class="container" id="building"></div>
+
+        <div style="position: fixed;" id="button">
+            <button>返回</button>
+        </div>
+
+        <div id="preloader">
+            <div class="p" id="loader" style="color: aqua; position: fixed;">正在加载数据部分, 预计需要5s</div>
+        </div>
+
+        <div class="but" id="but" style="position: fixed;">
+            <input type="button" value="第一层" id="button_A"> 
+            <input type="button" value="第二层" id="button_B"> 
+            <input type="button" value="第三层" id="button_C"> 
+        </div>
+
+        <div class="board" id="board">
+
+            <div class="item_left">
+
+                    <img src="/img/left.png" alt="left" style="height: 100vh;position: fixed; left: 0px;">
+                    <div class="box_left" id="box_1" ></div>
+                    <div class="box_left" id="box_2" ></div>
+                    <div class="box_left" id="box_3" >
+
+                        <div class="title" id="title">
+                            管控品库存详情
+                        </div>
+
+                        <div class="kuncun-father">
+                            <div id="kucun" class="ku"></div>
+                        </div>         
+
+                    </div>
+            </div>
+
+            <div class="item_center">
+
+                <h1 id="title_1">管控品数据可视化系统</h1>
+                <img src="/img/top.png" alt="right" id="top_img">
+
+            </div>
+
+            <div class="item_right">
+
+                <img src="/img/right.png" alt="right" style="height: 100vh; position: fixed; right: 0px;">
+                <div class="time" id ="time"></div>
+                <div class="date" id="date"></div>
+                <div class="box_right" id="box_4" ></div>
+                
+                <div class="box_right" id="box_5" >
+
+                    <div class="title" id="title_4">
+                        管控品在外详情
+                    </div>
+
+                    <!-- 默认数据 -->
+
+                    <div class="kuncun-father">
+                        <div class="ku" id="wai"></div>
+
+                        <div class="newbox" id="newbox_1"></div>
+                        <div class="newbox" id="newbox_2"></div>
+                        <div class="newbox" id="newbox_3"></div>
+
+
+                    </div>                   
+                </div>
+            </div>       
+        </div>
+    </div>
+</body>
+</html>
